@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>Word Game</title>
+		<link rel="stylesheet" href="/css/wordgame.css">
+	</head>
+	<body class="game-background">
+		<div class="table-container">
+			<table class="word-table">
+				<tbody>
+					<% for( let i=0; i<tries; i++ ) { %>
+						<tr id="row<%= i %>" class="<%= i == 0 ? 'active' : '' %>">
+							<% for( let j=0; j<letters; j++ ) { %>
+							<td class="word-cell">&nbsp;</td>
+							<% } %>
+						</tr>
+					<% } %>
+				</tbody>
+			</table>
+			<input type="text" id="check-word" class="form-field" maxlength="5" focus>
+		</div>
+	</body>
+	<script>
+		const totalIteration	= parseInt( "<%= tries %>" );
+		const defaultLength		= parseInt( "<%= letters %>" );
+		let currentIteration	= 0;
+	</script>
+	<script type='text/javascript' src='/js/wordgame.js'></script>
+</html>
